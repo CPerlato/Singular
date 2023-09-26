@@ -1,4 +1,4 @@
-<h1>Singular</h1>h1>
+<h1>Singular</h1>
 
 <p>Utilizando</p>
 <p>C#</p>
