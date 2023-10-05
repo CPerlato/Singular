@@ -7,16 +7,25 @@
 <head>
     <style>
 
+        * {
+            font-family: Zen Kaku Gothic Antique;
+        }
+
         .logo {
-            background-size: 50px 50px;
-            background-repeat: no-repeat;
-            padding: 15px;
+            width: 46px;
+            height: 44px;
+            background: 0;
         }
 
         .aviso {
+            width: 375px;
+            height: 150px;
             background-color: #CCEEEE;
             padding: 10px;
-    
+            top: 60px;
+            left: 998px;
+            border-radius: 20px;
+            text-align: center;
         }
 
         .form-control {
@@ -26,12 +35,20 @@
 
         #perfil {
             background: #EEE5E1;
+            width: 203px;
+            height: 400px;
+            border-radius: 5px;
+            text-align: center;
         }
 
-        #conteudo {
-            background: #EEE5E1;
-            border: 1px;
+        #buscar {
+            width: 343px;
+            height: 51px;
+            right: 900px;
+            left: 200px;
+            align-content: center;
         }
+
     </style>
 
 
@@ -40,17 +57,16 @@
     <div class="logo">
         <img src="~/image 13.png" />
     </div>
-
-    <div class="aviso">
-        <strong>AVISO</strong> 
-    </div>
-
-    
-        <div class="row">
-
-            <div class="col-2" id="perfil">
-
-                <h4>Meu perfil</h4>
+    <div class="row">
+        <div class="col-3 offset-9">
+            <div class="aviso">
+                <strong>AVISO</strong>
+                <img src="~/alert.png" />
+            </div>
+        </div>
+        <div class="row" id="perfil">
+            <div class="col-2 offset-3">
+                <h5>Meu perfil</h5>
                 <p>
                     <a href="#">TURMAS</a>
                 <p>
@@ -59,22 +75,26 @@
                     <a href="#">PERFIL</a>
                 <p>
                     <a href="#">SOBRE</a>
-
-            </div>
-            <div class="col-md-9 offset-md-3 busca-div">
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Procure sua turma" aria-label="Campo de busca" aria-describedby="icone-lupa">
-                    <span class="input-group-text" id="icone-lupa">
-                        <ion-icon name="search-outline"></ion-icon>
-                    </span>
-                </div>
-                _____________________________________________________________________________________________________________________________
             </div>
         </div>
-        <div class="col-md-4 offset-1" id="conteudo">
+
+        <div class="input-group mb-3" id="buscar">
+            <input type="text" class="form-control" placeholder="Procure sua turma" aria-label="Campo de busca" aria-describedby="icone-lupa">
+            <span class="input-group-text" id="icone-lupa">
+                <ion-icon name="search-outline"></ion-icon>
+            </span>
+            ______________________________________________________________________________________________________________________________
         </div>
     </div>
+    <div class="row">
+        <div class="col-4 offset-6">
+            <h1>teste</h1>
 
+        </div>
+
+    </div>
+
+   
 
 
 
