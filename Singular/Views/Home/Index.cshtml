@@ -8,6 +8,9 @@
     <style>
 
         * {
+            margin: 0px;
+            padding:0px;
+            font-size: 1.2rem;
             font-family: Zen Kaku Gothic Antique;
         }
 
@@ -18,7 +21,7 @@
         }
 
         .aviso {
-            width: 375px;
+            width: 300px;
             height: 150px;
             background-color: #CCEEEE;
             padding: 10px;
@@ -32,13 +35,19 @@
             width: 40%;
             padding: 10px;
         }
+        
+        a {
+            text-decoration: none;
+        }
 
-        #perfil {
+        .perfil {            
+            text-align: left;     
+            justify-content: right;
             background: #EEE5E1;
             width: 203px;
             height: 400px;
             border-radius: 5px;
-            text-align: center;
+         
         }
 
         #buscar {
@@ -64,17 +73,17 @@
                 <img src="~/alert.png" />
             </div>
         </div>
-        <div class="row" id="perfil">
-            <div class="col-2 offset-3">
-                <h5>Meu perfil</h5>
-                <p>
-                    <a href="#">TURMAS</a>
-                <p>
-                    <a href="#">RANKING</a>
-                <p>
-                    <a href="#">PERFIL</a>
-                <p>
-                    <a href="#">SOBRE</a>
+        <div>
+                <nav class="perfil">
+                <p>Meu perfil</p>
+                    <ul>
+                    
+                        <li><a href="#">TURMAS</a></li>
+                        <li><a href="#">RANKING</a></li>
+                        <li><a href="#">PERFIL</a></li>
+                        <li><a href="#">SOBRE</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
 
@@ -85,7 +94,7 @@
             </span>
             ______________________________________________________________________________________________________________________________
         </div>
-    </div>
+    
     <div class="row">
         <div class="col-4 offset-6">
             <h1>teste</h1>
@@ -94,7 +103,7 @@
 
     </div>
 
-   
+
 
 
 
