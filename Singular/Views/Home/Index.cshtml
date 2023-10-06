@@ -9,14 +9,14 @@
 
         * {
             margin: 0px;
-            padding:0px;
+            padding: 0px;
             font-size: 1.2rem;
             font-family: Zen Kaku Gothic Antique;
         }
 
         .logo {
-            width: 46px;
-            height: 44px;
+            width: auto;
+            height: 150px;
             background: 0;
         }
 
@@ -35,19 +35,18 @@
             width: 40%;
             padding: 10px;
         }
-        
+
         a {
             text-decoration: none;
         }
 
-        .perfil {            
-            text-align: left;     
-            justify-content: right;
+        .perfil {
+            text-align: left;
             background: #EEE5E1;
-            width: 203px;
-            height: 400px;
+            width: 208px; /* adjust later */
+            height: auto;
             border-radius: 5px;
-         
+            display: grid;
         }
 
         #buscar {
@@ -58,43 +57,74 @@
             align-content: center;
         }
 
+        .header {
+            width: 100%;
+            display: flex;
+            display: flex;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .t1 {
+            display: flex
+        }
+
+        .row {
+            flex-wrap: nowrap;
+            margin: 0;
+        }
     </style>
-
-
 </head>
 <body>
-    <div class="logo">
-        <img src="~/image 13.png" />
-    </div>
-    <div class="row">
-        <div class="col-3 offset-9">
-            <div class="aviso">
-                <strong>AVISO</strong>
-                <img src="~/alert.png" />
-            </div>
+
+    <div class="header">
+        <div class="logo">
+            <img src="~/image 13.png" />
         </div>
-        <div>
+        <span> Migalha de pão</span>
+    </div>
+
+    <div>
+        <div class="nav-bar">
+            <div class="menu">
                 <nav class="perfil">
-                <p>Meu perfil</p>
+                    <p>Meu perfil</p>
                     <ul>
-                    
                         <li><a href="#">TURMAS</a></li>
                         <li><a href="#">RANKING</a></li>
                         <li><a href="#">PERFIL</a></li>
                         <li><a href="#">SOBRE</a></li>
                     </ul>
                 </nav>
+
+                <div class="container text-center">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="input-group mb-3" id="buscar">
+                                <input type="text" class="form-control" placeholder="Procure sua turma" aria-label="Campo de busca" aria-describedby="icone-lupa">
+                                <span class="input-group-text" id="icone-lupa">
+                                    <ion-icon name="search-outline"></ion-icon>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="aviso">
+                            <strong>AVISO</strong>
+                            <img src="~/alert.png" />
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
         </div>
 
-        <div class="input-group mb-3" id="buscar">
-            <input type="text" class="form-control" placeholder="Procure sua turma" aria-label="Campo de busca" aria-describedby="icone-lupa">
-            <span class="input-group-text" id="icone-lupa">
-                <ion-icon name="search-outline"></ion-icon>
-            </span>
-            ______________________________________________________________________________________________________________________________
-        </div>
-    
+        <div> Tabela de pesquisa </div>
+    </div> Footer </div>
+
     <div class="row">
         <div class="col-4 offset-6">
             <h1>teste</h1>
@@ -102,11 +132,6 @@
         </div>
 
     </div>
-
-
-
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-fz5g0b2mAIwz3R6oyD9t9z5u5c3CkOKd7wBdFg5A+Jw5a6L5pma7qE2iu0w11OjI" crossorigin="anonymous"></script>
 </body>
