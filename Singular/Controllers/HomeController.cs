@@ -1,11 +1,12 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Singular.Filtros;
 using Singular.Models;
 using System.Diagnostics;
 
 namespace Singular.Controllers
 {
-    //[Authorize]
+    [PaginaParaUsuarioLogado]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

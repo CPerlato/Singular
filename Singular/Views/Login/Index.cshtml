@@ -1,4 +1,4 @@
-﻿    @model LoginModel 
+﻿@model LoginModel
 @{
     Layout = "_LayoutDeslogada";
     ViewData["Title"] = "Login";
@@ -16,7 +16,8 @@
     }
     
       
-    </style>    
+    </style>   
+    
  <div class="row">
     <div class="col-5 logo-login">  
     </div>
@@ -31,17 +32,31 @@
                             @TempData["MensagemErro"]
                             </div>
                     }
+                    @if (TempData["MensagemSucesso"] != null)
+                    {
+                        <div class="alert alert-sucess">
+                            @TempData["MensagemSucesso"]
+                        </div>
+                    }
                 </div>
                 <div>
                     <form id="form" action="/Login/entrar" method="post">
                         <div class="mb-3">
-                            <label for="login" class="form-label">Email</label>
-                            <input type="text" asp-for="Email" class="form-control" id="login">
+                            <label for="login" class="form-label">Login</label>
+                            <input type="text" asp-for="Login" class="form-control" id="login">
+                            @Html.ValidationMessageFor(x => x.Login)
                         </div>
                         <div class="mb-3">
                             <label for="senha" class="form-label">Senha</label>
                             <input type="password" asp-for="Senha" class="form-control" id="senha">
+                            @Html.ValidationMessageFor(x => x.Senha)
                         </div>
+                        <p class="mb-4 text-sm-center mx-auto">
+                            Esqueceu sua senha ?
+                            <a asp-action="RedefinirSenha" asp-controller="Login" class="text-primary text-gradient font-weight-bold">
+                                Redefinir Senha
+                            </a>
+                        </p>
                         <button id="button" type="submit" class="btn btn-primary">Continuar</button>
                     </form>
                 </div>

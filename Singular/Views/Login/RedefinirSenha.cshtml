@@ -1,0 +1,54 @@
+﻿@model RedefinirSenhaModel
+@{
+    Layout = "_LayoutDeslogada";
+    ViewData["Title"] = "Redefinir Senha";
+}
+
+
+<style>
+    .logo-login {
+        background: url("/pattern-c.png") repeat fixed;
+        height: 100vh;
+    }
+
+    .centro-vertical {
+        margin-top: 20%;
+    }
+</style>
+
+<div class="row">
+    <div class="col-5 logo-login">
+    </div>
+    <div class="col-7">
+        <div class="row centro-vertical">
+            <div class="col-6 offset-3">
+                <div id="img">
+                    <img src="~/image 13.png" />
+                    @if (TempData["MensagemErro"] != null)
+                    {
+                        <div class="alert alert-danger">
+                            @TempData["MensagemErro"]
+                        </div>
+                    }
+                </div>
+                <div>
+                    <form asp-controller="Login" asp-action="EnviarLinkParaRedefinirSenha" method="post">
+                        <div class="mb-3">
+                            <label for="login" class="form-label">Login</label>
+                            <input type="text" asp-for="Login" class="form-control" id="login">
+                            @Html.ValidationMessageFor(x => x.Login)
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">E-mail</label>
+                            <input type="text" asp-for="Email" class="form-control" id="email">
+                            @Html.ValidationMessageFor(x => x.Email)
+                        </div>
+                        <button id="button" type="submit" class="btn btn-primary">Redefinir Senha</button>
+                        <a class="btn btn-secundary btn-block" asp-action="Index" asp-controller="Login" role="button">Voltar</a>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

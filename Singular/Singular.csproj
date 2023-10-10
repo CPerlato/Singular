@@ -7,7 +7,24 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Views\LoginController1\" />
+    <Compile Remove="Views\LoginController1\**" />
+    <Content Remove="Views\LoginController1\**" />
+    <EmbeddedResource Remove="Views\LoginController1\**" />
+    <None Remove="Views\LoginController1\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.11">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.11">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Pomelo.EntityFrameWorkCore.MySql" Version="7.0.0" />
   </ItemGroup>
 
 </Project>
