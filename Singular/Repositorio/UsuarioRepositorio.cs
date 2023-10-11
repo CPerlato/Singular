@@ -5,10 +5,10 @@ using Singular.Repositorio;
 
 namespace Singular.Repositorio
 {
-    public class UsuarioRepositorio : IUsuarioRepositorio
+    public class usuarioRepositorio : IUsuarioRepositorio
     {
         private readonly BancoContext _context;
-        public UsuarioRepositorio(BancoContext bancoContext)
+        public usuarioRepositorio(BancoContext bancoContext)
         {
             this._context = bancoContext;
         }
@@ -32,6 +32,11 @@ namespace Singular.Repositorio
         }
         public UsuarioModel Adicionar(UsuarioModel usuario)
         {
+            if (_context.Usuarios.Any(u => u.Login == usuario.Login && u.Id != usuario.Id))
+            {
+                throw new Exception("Já existe um usuário com o mesmo nome.");
+            }
+
             usuario.DataCadastro = DateTime.Now;
             usuario.SetSenhaHash();
             _context.Usuarios.Add(usuario);
@@ -44,6 +49,11 @@ namespace Singular.Repositorio
             UsuarioModel usuarioDB = BuscarPorId(usuario.Id);
 
             if (usuarioDB == null) throw new Exception("Houve um erro na atualização de usuário");
+            
+            if (_context.Usuarios.Any(u => u.Login == usuario.Login && u.Id != usuario.Id))
+            {
+                throw new Exception("Já existe um usuário com o mesmo nome.");
+            }
 
             usuarioDB.Nome = usuario.Nome;
             usuarioDB.Email = usuario.Email;
@@ -53,6 +63,24 @@ namespace Singular.Repositorio
 
             _context.Usuarios.Update(usuarioDB);
             _context.SaveChanges();
+
+            return usuarioDB;
+        }
+
+        public UsuarioModel AlterarSenha(AlterarSenhaModel alterarSenhaModel)
+        {
+            UsuarioModel usuarioDB = BuscarPorId(alterarSenhaModel.Id);
+
+            if (usuarioDB == null) throw new Exception("Houve um erro, usuário não encontrado");
+
+            if (!usuarioDB.SenhaValida(alterarSenhaModel.SenhaAtual)) throw new Exception("Senha Atual não confere");
+
+            if (usuarioDB.SenhaValida(alterarSenhaModel.NovaSenha)) throw new Exception("Nova senha deve ser diferente da senha atual");
+
+            usuarioDB.SetNovaSenha(alterarSenhaModel.NovaSenha);
+            _context.SaveChanges();
+
+            usuarioDB.DataAtualizacao = DateTime.Now;
 
             return usuarioDB;
         }

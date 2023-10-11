@@ -1,6 +1,7 @@
 ﻿using Singular.Enums;
 using Singular.Helper;
 using System.ComponentModel.DataAnnotations;
+using System.Reflection.Metadata;
 
 namespace Singular.Models
 {
@@ -28,6 +29,10 @@ namespace Singular.Models
         public void SetSenhaHash()
         {
             Senha = Senha.GerarHash();
+        }
+        public void SetNovaSenha(string novaSenha)
+        {
+            Senha = novaSenha.GerarHash();
         }
         public string GerarNovaSenha()
         {

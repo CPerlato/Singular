@@ -7,10 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Properties\**" />
     <Compile Remove="Views\LoginController1\**" />
+    <Content Remove="Properties\**" />
     <Content Remove="Views\LoginController1\**" />
+    <EmbeddedResource Remove="Properties\**" />
     <EmbeddedResource Remove="Views\LoginController1\**" />
+    <None Remove="Properties\**" />
     <None Remove="Views\LoginController1\**" />
+    <_WebToolingArtifacts Remove="Properties\**" />
   </ItemGroup>
 
   <ItemGroup>
