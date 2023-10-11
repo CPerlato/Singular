@@ -3,6 +3,7 @@
     public enum PerfilEnum
     {
         Admin = 1,
-        Padrão = 2
+        Professor = 2,
+        Aluno = 3
     }
 }

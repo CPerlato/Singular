@@ -9,12 +9,20 @@
   <ItemGroup>
     <Compile Remove="Properties\**" />
     <Compile Remove="Views\LoginController1\**" />
+    <Compile Remove="Views\Shared\Componentes\**" />
+    <Compile Remove="Views\Shared\NovaPasta\**" />
     <Content Remove="Properties\**" />
     <Content Remove="Views\LoginController1\**" />
+    <Content Remove="Views\Shared\Componentes\**" />
+    <Content Remove="Views\Shared\NovaPasta\**" />
     <EmbeddedResource Remove="Properties\**" />
     <EmbeddedResource Remove="Views\LoginController1\**" />
+    <EmbeddedResource Remove="Views\Shared\Componentes\**" />
+    <EmbeddedResource Remove="Views\Shared\NovaPasta\**" />
     <None Remove="Properties\**" />
     <None Remove="Views\LoginController1\**" />
+    <None Remove="Views\Shared\Componentes\**" />
+    <None Remove="Views\Shared\NovaPasta\**" />
     <_WebToolingArtifacts Remove="Properties\**" />
   </ItemGroup>
 

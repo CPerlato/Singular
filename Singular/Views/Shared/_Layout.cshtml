@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="~/Singular.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
-                             
-                
-    </header>
+    <div>
+            <div class="container">
+                @await Component.InvokeAsync("Menu")
+            </div>
+    </div>
     <div>
         <main role="main" class="pb-3">
             @RenderBody()

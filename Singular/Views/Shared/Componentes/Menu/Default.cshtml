@@ -1,4 +1,5 @@
 ﻿@model UsuarioModel
+
 <style>
         /* Define regras básicas para todos os elementos */
         /*         * {
@@ -101,7 +102,7 @@
 </style>
 
 <div class="nav-bar" id="navbar">
-
+    <a class="nav-bar" asp-area="" asp-controller="Home" asp-action="Index">Olá,@Model.Nome</a>
     <div class="header">
         <div class="logo">
             <img src="~/image 13.png" />
@@ -116,6 +117,8 @@
             <li><a href="#">SOBRE</a></li>
             <li><a asp-controller="Usuario" asp-action="Index">ALUNOS</a></li>
             <li><a asp-controller="AlterarSenha" asp-action="Index">ALTERAR SENHA</a></li>
+            <li><a asp-controller="Login" asp-action="Sair">SAIR</a></li>
+
         </ul>
     </nav>
 </div>

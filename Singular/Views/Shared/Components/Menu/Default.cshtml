@@ -1,0 +1,152 @@
+﻿
+@model UsuarioModel
+<style>
+    /* Define regras básicas para todos os elementos */
+    /*         * {
+                        margin: 0;
+                        padding: 0;
+                        font-size: 1.2rem;
+                        font-family: Zen Kaku Gothic Antique;
+                    } */
+
+    /* Estiliza a barra de cabeçalho */
+    .header {
+        width: 100%; /* Largura total */
+        display: flex; /* Exibe os elementos em linha */
+        align-items: center; /* Alinha verticalmente os elementos no centro */
+    }
+
+    /* Estiliza o logotipo */
+    .logomenu {
+        width: auto; /* Largura automática */
+        height: 120px;
+        background: 0; /* Remove qualquer plano de fundo */
+    }
+
+    /* Define estilos para a barra de navegação lateral */
+    .nav-bar {
+        display: flex; /* Exibe os elementos em coluna */
+        flex-direction: column; /* Alinha os elementos em uma coluna */
+        align-items: center; /* Alinha verticalmente os elementos no centro */
+        position: fixed; /* Fixa a posição no topo */
+        top: 0;
+        left: -250px; /* Inicialmente, esconde a barra à esquerda */
+        width: 250px; /* Largura fixa */
+        height: 100%; /* Altura total */
+        background-color: #EEE5E1; /* Cor de fundo */
+        transition: left 0.3s; /* Transição suave na propriedade 'left' */
+        z-index: 1; /* Coloca a barra na parte superior da pilha de camadas */
+    }
+
+        /* Quando a classe 'active' é aplicada, torna a barra visível */
+        .nav-bar.active {
+            left: 0; /* Move a barra para a posição esquerda (visível) */
+        }
+
+    /* Estiliza o menu de perfil */
+    .perfil {
+        text-align: left;
+        background: #EEE5E1;
+        width: 208px;
+        border-radius: 5px;
+        display: grid;
+    }
+
+        /* Estiliza o parágrafo dentro do menu de perfil */
+        .perfil p {
+            text-align: center;
+            margin-top: 0;
+            padding: 10px;
+            background-color: #EEE5E1;
+            color: #00000099; /* Define a cor do texto como branco */
+        }
+
+        /* Remove os estilos padrão da lista de itens */
+        .perfil ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+            /* Estiliza os itens da lista dentro do menu de perfil */
+            .perfil ul li {
+                padding: 10px;
+                text-align: center;
+            }
+
+                /* Estiliza os links dentro do menu de perfil */
+                .perfil ul li a {
+                    color: #00000099; /* Define a cor do texto como branco */
+                    text-decoration: none; /* Remove a decoração de texto (sublinhado) */
+                    display: block;
+                }
+
+                    /* Quando o mouse passa por cima dos links, altera a cor de fundo */
+                    .perfil ul li a:hover {
+                        background-color: whitesmoke;
+                    }
+
+    /* Define estilos para o botão de alternância */
+    .toggle-btn {
+        position: absolute;
+        left: 250px; /* Posiciona à direita do menu lateral visível */
+        top: 20px;
+        cursor: pointer; /* Muda o cursor do mouse para indicar que é clicável */
+        z-index: 2; /* Coloca o botão acima da barra de navegação */
+    }
+
+    /* Define estilos para a área de conteúdo da página */
+    .content {
+        margin-left: 250px; /* Afasta o conteúdo da esquerda para acomodar a barra visível */
+        padding: 20px;
+    }
+    /* Estiliza a imagem centralizada */
+    .profile-image {
+        text-align: center;
+        margin-top: 20px; /* Espaço superior para alinhar a imagem */
+    }
+
+        .profile-image img {
+            width: 100px; /* Largura da imagem */
+            height: 100px; /* Altura da imagem */
+            border-radius: 50%; /* Define um raio de borda para criar uma imagem circular */
+        }
+</style>
+<div class="toggle-btn" onclick="toggleNavBar()">☰</div>
+
+<div class="nav-bar" id="navbar">
+    <div class="">
+        <div class="logomenu">
+            <img src="~/image 13.png" />
+        </div>
+    </div>
+    <div class="profile-image">
+            <img src="~/lib/be like matrix.png" />
+    </div>
+
+    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Olá, @Model.Nome</a>
+
+    <nav class="perfil">
+        <p>Meu perfil</p>
+        <ul>
+            <li><a href="#">TURMAS</a></li>
+            <li><a href="#">RANKING</a></li>
+            <li><a href="#">PERFIL</a></li>
+            <li><a href="#">SOBRE</a></li>
+            @if(Model.Perfil == Singular.Enums.PerfilEnum.Admin)
+            {
+                <li><a asp-controller="Usuario" asp-action="Index">ALUNOS</a></li>
+
+            }
+            <li><a asp-controller="AlterarSenha" asp-action="Index">ALTERAR SENHA</a></li>
+            <li><a asp-controller="Login" asp-action="Sair">SAIR</a></li>
+
+        </ul>
+    </nav>
+</div>
+<script>
+    function toggleNavBar() {
+        var navbar = document.getElementById('navbar');
+        navbar.classList.toggle('active');
+    }
+</script> 
+
