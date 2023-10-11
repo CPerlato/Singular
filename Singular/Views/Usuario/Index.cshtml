@@ -3,54 +3,92 @@
     ViewData["Title"] = "Alunos";
 }
 
-<div class="text-center">
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alunos</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    <style>
+        /* Estilos para os botões */
+        .btn {
+            margin: 5px;
+        }
 
-    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-        <a class="btn " btn-primary" asp-controller="Usuario" asp-action="Criar" role="button">Adicionar novo usuario</a>
-    </div>
+        /* Estilos para a tabela */
+        #table-usuarios {
+            width: 80%; /* Aumenta a largura da tabela */
+            margin: 20px auto;
+            border-collapse: collapse; /* Colapsa as bordas da tabela */
+        }
 
-    <h1 class="display-4">Listagem de Alunos</h1>
+        /* Estilos para a mensagem de "Nenhum Usuário Encontrado" */
+        .no-users {
+            text-align: center;
+        }
 
-    <table id="table-usuarios" class="display" style="width:60%">
-        <thead>
-            <tr>
-                <th scope="col">RA</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Login</th>
-                <th scope="col">Email</th>
-                <th scope="col">Perfil</th>
-                <th scope="col">Data de Cadastro</th>
-                <th scope="col"></th>
-            </tr>
-        </thead>
-        <tbody>
-            @if (Model != null && Model.Any())
-            {
-                foreach (var usuario in Model)
+        /* Estilos para as células da tabela (exceto células dos botões) */
+        #table-usuarios td, #table-usuarios th {
+            text-align: center; /* Centraliza o conteúdo das células */
+            font-size: 16px; /* Aumenta o tamanho da fonte */
+            padding: 10px; /* Adiciona espaço interno para as células */
+            border: 1px solid #ddd; /* Adiciona uma borda fina às células */
+        }
+
+        /* Estilos para as linhas ímpares */
+        #table-usuarios tr:nth-child(odd) {
+            background-color: #CEEAF7;
+            /* Cor de fundo para linhas ímpares */
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+
+        <h1 class="display-4">Listagem de Usuários</h1>
+
+        <table id="table-usuarios" class="display">
+            <thead>
+                <tr>
+                    <th scope="col">RA</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Login</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Perfil</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Any())
                 {
-                    <tr>
-                        <th scope="row">@usuario.Id</th>
-                        <td>@usuario.Nome</td>
-                        <td>@usuario.Login</td>
-                        <td>@usuario.Email</td>
-                        <td>@(usuario.Perfil == Singular.Enums.PerfilEnum.Admin ? "Administrador" : "Professor")</td>
-                        <td>@usuario.DataCadastro</td>
-                        <td>
-                            <div class="btn-group" role="group">
-                                <a role="button" asp-action="Editar" asp-controller="Usuario" asp-route-id="@usuario.Id" class="btn btn-primary">Editar</a>
-                                <a role="button" asp-action="ApagarConfirmacao" asp-controller="Usuario" asp-route-id="@usuario.Id" class="btn btn-primary">Apagar</a>
-                            </div>
-                        </td>
+                    foreach (var usuario in Model)
+                    {
+                        <tr>
+                            <th scope="row">@usuario.Id</th>
+                            <td>@usuario.Nome</td>
+                            <td>@usuario.Login</td>
+                            <td>@usuario.Email</td>
+                            <td>@(usuario.Perfil == Singular.Enums.PerfilEnum.Admin ? "Administrador" : "Professor")</td>
+                            <td>
+                                <div class="btn-group" role="group">
+                                    <a role="button" asp-action="Editar" asp-controller="Usuario" asp-route-id="@usuario.Id" class="btn btn-primary">Editar</a>
+                                    <a role="button" asp-action="ApagarConfirmacao" asp-controller="Usuario" asp-route-id="@usuario.Id" class="btn btn-primary">Apagar</a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr class="odd">
+                        <td class="no-users" colspan="7">Nenhum Usuário Encontrado</td>
                     </tr>
                 }
-            }
-            else
-            {
-                <tr calss="odd"><td valign="top" colspan="5">Nenhum Usuário Encontrado</td></tr>
-            }
-        </tbody>
-
-    </table>
-
-
-</div>
+            </tbody>
+        </table>
+    </div>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <a class="btn btn-primary" asp-controller="Usuario" asp-action="Criar" role="button">Adicionar novo usuário</a>
+        <a class="btn btn-secondary" asp-action="Index" asp-controller="Home" role="button">Voltar</a>
+    </div>
+</body>
+</html>
