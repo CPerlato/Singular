@@ -2,12 +2,12 @@
 @model UsuarioModel
 <style>
     /* Define regras básicas para todos os elementos */
-    /*         * {
-                        margin: 0;
-                        padding: 0;
-                        font-size: 1.2rem;
-                        font-family: Zen Kaku Gothic Antique;
-                    } */
+    * {
+        margin: 0;
+        padding: 0;
+        font-size: 1.2rem;
+        font-family: Zen Kaku Gothic Antique;
+    }
 
     /* Estiliza a barra de cabeçalho */
     .header {
@@ -43,6 +43,13 @@
             left: 0; /* Move a barra para a posição esquerda (visível) */
         }
 
+    .navbar-brand{
+        color: #00000099;
+    }
+
+    .navbar-brand:hover {
+        color: #fd7e14;
+    }
     /* Estiliza o menu de perfil */
     .perfil {
         text-align: left;
@@ -51,15 +58,6 @@
         border-radius: 5px;
         display: grid;
     }
-
-        /* Estiliza o parágrafo dentro do menu de perfil */
-        .perfil p {
-            text-align: center;
-            margin-top: 0;
-            padding: 10px;
-            background-color: #EEE5E1;
-            color: #00000099; /* Define a cor do texto como branco */
-        }
 
         /* Remove os estilos padrão da lista de itens */
         .perfil ul {
@@ -78,11 +76,12 @@
                     color: #00000099; /* Define a cor do texto como branco */
                     text-decoration: none; /* Remove a decoração de texto (sublinhado) */
                     display: block;
+                    text-align: left; /* Alinha o texto dos links à esquerda */
                 }
 
                     /* Quando o mouse passa por cima dos links, altera a cor de fundo */
                     .perfil ul li a:hover {
-                        background-color: whitesmoke;
+                        color: #fd7e14;
                     }
 
     /* Define estilos para o botão de alternância */
@@ -99,6 +98,7 @@
         margin-left: 250px; /* Afasta o conteúdo da esquerda para acomodar a barra visível */
         padding: 20px;
     }
+
     /* Estiliza a imagem centralizada */
     .profile-image {
         text-align: center;
@@ -111,6 +111,7 @@
             border-radius: 50%; /* Define um raio de borda para criar uma imagem circular */
         }
 </style>
+
 <div class="toggle-btn" onclick="toggleNavBar()">☰</div>
 
 <div class="nav-bar" id="navbar">
@@ -126,7 +127,6 @@
     <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Olá, @Model.Nome</a>
 
     <nav class="perfil">
-        <p>Meu perfil</p>
         <ul>
             <li><a href="#">TURMAS</a></li>
             <li><a href="#">RANKING</a></li>

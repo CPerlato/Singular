@@ -1,6 +1,6 @@
 ﻿@model List<UsuarioModel>
 @{
-    ViewData["Title"] = "Usuários";
+    ViewData["Title"] = "Alunos";
 }
 
 <div class="text-center">
@@ -9,12 +9,12 @@
         <a class="btn " btn-primary" asp-controller="Usuario" asp-action="Criar" role="button">Adicionar novo usuario</a>
     </div>
 
-    <h1 class="display-4">Listagem de Usuários</h1>
+    <h1 class="display-4">Listagem de Alunos</h1>
 
     <table id="table-usuarios" class="display" style="width:60%">
         <thead>
             <tr>
-                <th scope="col">#</th>
+                <th scope="col">RA</th>
                 <th scope="col">Nome</th>
                 <th scope="col">Login</th>
                 <th scope="col">Email</th>

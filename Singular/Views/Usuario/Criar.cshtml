@@ -5,7 +5,7 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Cadastrar Usuário</h1>
+    <h1 class="display-4">Cadastrar Aluno</h1>
 </div>
 
 <form asp-controller="Usuario" asp-action="Criar" method="post">
@@ -36,7 +36,6 @@
             <option value="@PerfilEnum.Professor"> Professor </option>
             <option value="@PerfilEnum.Aluno"> Aluno </option>
             @Html.ValidationMessageFor(x => x.Perfil)
-
         </select>
     </div>
 
