@@ -21,7 +21,7 @@ namespace Singular.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult IndexA()
         {
             return View();
         }
