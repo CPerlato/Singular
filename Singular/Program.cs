@@ -8,8 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<BancoContext>
-    (options => options.UseMySql("server=192.168.10.5;Port=3306; initial catalog=Singular;uid=jarvis;pwd=IronMan.123",
-                          Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.31-mysql")));
+    (options => options.UseMySql("server=186.202.152.119; initial catalog=singularinc;uid=singularinc;pwd=Singular@19",
+                          Microsoft.EntityFrameworkCore.ServerVersion.Parse("libmysql - 5.5.62")));
 
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
