@@ -121,7 +121,7 @@
         </div>
     </div>
     <div class="profile-image">
-            <img src="~/lib/be like matrix.png" />
+            <img src="" />
     </div>
 
     <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Olá, @Model.Nome</a>
@@ -146,7 +146,21 @@
 <script>
     function toggleNavBar() {
         var navbar = document.getElementById('navbar');
+        var toggleBtn = document.querySelector('.toggle-btn');
         navbar.classList.toggle('active');
+
+        // Verifica se o menu está visível ou não
+        if (navbar.classList.contains('active')) {
+            // Quando o menu está visível, move o botão para a direita
+            toggleBtn.style.left = '250px'; // A mesma largura do menu
+        } else {
+            // Quando o menu está escondido, move o botão de volta para a esquerda
+            toggleBtn.style.left = '25px';
+        }
     }
-</script> 
+
+    // Chama a função toggleNavBar() para abrir o menu automaticamente
+    toggleNavBar();
+</script>
+
 
