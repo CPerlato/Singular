@@ -36,7 +36,8 @@
         background-color: #EEE5E1; /* Cor de fundo */
         transition: left 0.3s; /* Transição suave na propriedade 'left' */
         z-index: 1; /* Coloca a barra na parte superior da pilha de camadas */
-    }
+        gap: 32px;
+        }
 
         /* Quando a classe 'active' é aplicada, torna a barra visível */
         .nav-bar.active {
@@ -45,10 +46,12 @@
 
     .navbar-brand{
         color: #00000099;
+       
     }
 
     .navbar-brand:hover {
         color: #fd7e14;
+
     }
     /* Estiliza o menu de perfil */
     .perfil {
@@ -62,8 +65,9 @@
         /* Remove os estilos padrão da lista de itens */
         .perfil ul {
             list-style-type: none;
-            padding: 0;
+            padding: 0;          
         }
+             
 
             /* Estiliza os itens da lista dentro do menu de perfil */
             .perfil ul li {
@@ -86,6 +90,9 @@
 
     /* Define estilos para o botão de alternância */
     .toggle-btn {
+        border:none;
+        background: none;
+        border-top: 3px solid #fff;        
         position: absolute;
         left: 250px; /* Posiciona à direita do menu lateral visível */
         top: 20px;
@@ -113,17 +120,12 @@
 </style>
 
 <div class="toggle-btn" onclick="toggleNavBar()">☰</div>
-
-<div class="nav-bar" id="navbar">
+<div class="nav-bar" id="navbar">   
     <div class="">
         <div class="logomenu">
             <img src="~/image 13.png" />
         </div>
-    </div>
-    <div class="profile-image">
-            <img src="" />
-    </div>
-
+    </div> 
     <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Olá, @Model.Nome</a>
 
     <nav class="perfil">
