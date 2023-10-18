@@ -6,7 +6,6 @@
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <head>
     <style>
-
         * {
             margin: 0px;
             padding: 0px;
@@ -20,31 +19,37 @@
             background: 0;
         }
 
-        .aviso {
-            width: 300px;
-            height: 150px;
-            background-color: #CCEEEE;
-            padding: 10px;
-            top: 20px;
-            left: 998px;
-            border-radius: 20px;
-            text-align: center;
-        }
-
+        /* Reduza o tamanho do contêiner de busca e do ícone */
         .form-control {
-            width: 40%;
+            width: 20%; /* Defina a largura desejada */
             padding: 10px;
             cursor: pointer;
+        }
+
+        .input-group-text {
+            font-size: 1rem; /* Ajuste o tamanho do ícone de pesquisa conforme necessário */
         }
 
         a {
             text-decoration: none;
         }
 
+        /* Reduza o tamanho do aviso e ajuste o posicionamento */
+        .aviso {
+            width: 200px; /* Defina a largura desejada */
+            height: 150px;
+            background-color: #CCEEEE;
+            padding: 10px;
+            top: 20px;
+            left: 998px; /* Ajuste a posição conforme necessário */
+            border-radius: 20px;
+            text-align: center;
+        }
+
         .perfil {
             text-align: left;
             background: #EEE5E1;
-            width: 208px; /* adjust later */
+            width: 208px; /* ajuste conforme necessário */
             height: auto;
             border-radius: 5px;
             display: grid;
@@ -71,7 +76,7 @@
         hr {
             width: 87%;
             float: right;
-        }       
+        }
 
         .table-container {
             text-align: center;
@@ -93,12 +98,7 @@
     </style>
 </head>
 <body>
-
-
-    @* <span> Migalha de pão</span> *@
-
     <div class="content">
-
         <div class="container">
             <h1>PROCURE</h1>
             <div class="row">
@@ -110,7 +110,6 @@
                         </span>
                     </div>
                 </div>
-
                 <div class="aviso">
                     <strong>AVISO</strong>
                     <img src="~/alert.png" />
@@ -118,12 +117,6 @@
             </div>
         </div>
     </div>
-
-    @*     <div> Tabela de pesquisa </div>
-    <div> Footer </div> *@
     <hr />
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-fz5g0b2mAIwz3R6oyD9t9z5u5c3CkOKd7wBdFg5A+Jw5a6L5pma7qE2iu0w11OjI" crossorigin="anonymous"></script>
 </body>
