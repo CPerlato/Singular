@@ -96,7 +96,7 @@
         border-top: 3px solid #fff;        
         position: absolute;
         left: 250px; /* Posiciona à direita do menu lateral visível */
-        top: 20px;
+        top: 40px;
         cursor: pointer; /* Muda o cursor do mouse para indicar que é clicável */
         z-index: 2; /* Coloca o botão acima da barra de navegação */
     }
@@ -133,14 +133,24 @@
         <ul>
             <li><a href="#">TURMAS</a></li>
             @*<li><a href="#">RANKING</a></li>*@
-            <li><a href="#">PERFIL</a></li>
-            <li><a href="#">SOBRE</a></li>
             @if(Model.Perfil == Singular.Enums.PerfilEnum.Admin)
             {
                 <li><a asp-controller="Usuario" asp-action="Index">USUÁRIOS</a></li>
 
             }
             @*<li><a asp-controller="AlterarSenha" asp-action="Index">ALTERAR SENHA</a></li>*@
+            <li><a href="#">PERFIL</a></li>
+            <li><a href="#">SOBRE</a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
             <li><a asp-controller="Login" asp-action="Sair">SAIR</a></li>
 
         </ul>
