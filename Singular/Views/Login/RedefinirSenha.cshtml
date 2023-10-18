@@ -44,8 +44,9 @@
                             <input type="text" asp-for="Email" class="form-control" id="email">
                             @Html.ValidationMessageFor(x => x.Email)
                         </div>
-                        <button id="button" type="submit" class="btn btn-primary">Redefinir Senha</button>
-                        <a class="btn btn-secundary btn-block" asp-action="Index" asp-controller="Login" role="button">Voltar</a>
+                        <button id="button" type="submit" class="btn btn-secondary form-control" style="background-color: #2F3538;">Redefinir Senha</button>
+                        <h6> </h6>
+                        <a class="btn btn-secondary btn-block form-control" asp-action="Index" asp-controller="Login" role="button" style="background-color: gray;">Voltar</a>
 
                     </form>
                 </div>

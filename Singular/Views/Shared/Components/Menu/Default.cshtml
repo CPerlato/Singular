@@ -77,10 +77,11 @@
 
                 /* Estiliza os links dentro do menu de perfil */
                 .perfil ul li a {
-                    color: #00000099; /* Define a cor do texto como branco */
-                    text-decoration: none; /* Remove a decoração de texto (sublinhado) */
+                    font-size: 1rem; /* Tamanho das letras reduzido */
+                    color: #00000099;
+                    text-decoration: none;
                     display: block;
-                    text-align: left; /* Alinha o texto dos links à esquerda */
+                    text-align: left;
                 }
 
                     /* Quando o mouse passa por cima dos links, altera a cor de fundo */
@@ -131,7 +132,7 @@
     <nav class="perfil">
         <ul>
             <li><a href="#">TURMAS</a></li>
-            <li><a href="#">RANKING</a></li>
+            @*<li><a href="#">RANKING</a></li>*@
             <li><a href="#">PERFIL</a></li>
             <li><a href="#">SOBRE</a></li>
             @if(Model.Perfil == Singular.Enums.PerfilEnum.Admin)
@@ -139,7 +140,7 @@
                 <li><a asp-controller="Usuario" asp-action="Index">USUÁRIOS</a></li>
 
             }
-            <li><a asp-controller="AlterarSenha" asp-action="Index">ALTERAR SENHA</a></li>
+            @*<li><a asp-controller="AlterarSenha" asp-action="Index">ALTERAR SENHA</a></li>*@
             <li><a asp-controller="Login" asp-action="Sair">SAIR</a></li>
 
         </ul>
@@ -149,6 +150,7 @@
     function toggleNavBar() {
         var navbar = document.getElementById('navbar');
         var toggleBtn = document.querySelector('.toggle-btn');
+
         navbar.classList.toggle('active');
 
         // Verifica se o menu está visível ou não
@@ -161,8 +163,9 @@
         }
     }
 
-    // Chama a função toggleNavBar() para abrir o menu automaticamente
-    toggleNavBar();
+    // Chama a função toggleNavBar() ao carregar a página
+    window.onload = toggleNavBar;
 </script>
+
 
 
