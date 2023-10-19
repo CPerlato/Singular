@@ -6,7 +6,7 @@
         margin: 0;
         padding: 0;
         font-size: 1.2rem;
-        font-family: Zen Kaku Gothic Antique;
+        font-family: Apple Chancery;
     }
 
     /* Estiliza a barra de cabeçalho */
@@ -37,7 +37,8 @@
         transition: left 0.3s; /* Transição suave na propriedade 'left' */
         z-index: 1; /* Coloca a barra na parte superior da pilha de camadas */
         gap: 32px;
-        }
+        border-radius: 25px; /* Adiciona bordas arredondadas de 10px */
+    }
 
         /* Quando a classe 'active' é aplicada, torna a barra visível */
         .nav-bar.active {
@@ -50,7 +51,7 @@
     }
 
     .navbar-brand:hover {
-        color: #fd7e14;
+            color: #7D9CAB;
 
     }
     /* Estiliza o menu de perfil */
@@ -77,16 +78,17 @@
 
                 /* Estiliza os links dentro do menu de perfil */
                 .perfil ul li a {
-                    font-size: 1rem; /* Tamanho das letras reduzido */
+                    font-size: 1.1rem; /* Tamanho das letras reduzido */
                     color: #00000099;
                     text-decoration: none;
                     display: block;
                     text-align: left;
+                    font-family: Optima;
                 }
 
                     /* Quando o mouse passa por cima dos links, altera a cor de fundo */
                     .perfil ul li a:hover {
-                        color: #fd7e14;
+                        color: #7D9CAB;
                     }
 
     /* Define estilos para o botão de alternância */
@@ -126,21 +128,21 @@
         <div class="logomenu">
             <img src="~/image 13.png" />
         </div>
+        <hr>
     </div> 
     <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Olá, @Model.Nome</a>
-
     <nav class="perfil">
+        <hr>
         <ul>
-            <li><a href="#">TURMAS</a></li>
+            @* <li><a href="#">TURMAS</a></li> *@
             @*<li><a href="#">RANKING</a></li>*@
             @if(Model.Perfil == Singular.Enums.PerfilEnum.Admin)
             {
-                <li><a asp-controller="Usuario" asp-action="Index">USUÁRIOS</a></li>
-
+                <li><a asp-controller="Usuario" asp-action="Index">Usuários</a></li>
             }
             @*<li><a asp-controller="AlterarSenha" asp-action="Index">ALTERAR SENHA</a></li>*@
-            <li><a href="#">PERFIL</a></li>
-            <li><a href="#">SOBRE</a></li>
+            <li><a href="#">Perfil</a></li>
+            <li><a href="#">Sobre</a></li>
             <li><a href="#"></a></li>
             <li><a href="#"></a></li>
             <li><a href="#"></a></li>
@@ -149,10 +151,7 @@
             <li><a href="#"></a></li>
             <li><a href="#"></a></li>
             <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a asp-controller="Login" asp-action="Sair">SAIR</a></li>
-
+            <li><a asp-controller="Login" asp-action="Sair">Sair</a></li>
         </ul>
     </nav>
 </div>
@@ -172,7 +171,6 @@
             toggleBtn.style.left = '25px';
         }
     }
-
     // Chama a função toggleNavBar() ao carregar a página
     window.onload = toggleNavBar;
 </script>
