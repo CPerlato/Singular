@@ -9,11 +9,13 @@
     <title>Alunos</title>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
     <style>
-        /* Estilos para os botões */
-        .btn {
-            margin: 5px;
+        .custom-margin-right {
+            margin-left: 140px; /* Ajuste o valor da margem conforme necessário */
         }
 
+        .d-grid{
+            margin-left: 265px; /* Ajuste o valor da margem conforme necessário */
+        }
         /* Estilos para a tabela */
         #table-usuarios {
             width: 80%; /* Aumenta a largura da tabela */
@@ -42,8 +44,7 @@
     </style>
 </head>
 <body>
-    <div class="container text-center offset-md-2">
-
+    <div class="container text-center custom-margin-right">
         <h1 class="display-4">Listagem de Usuários</h1>
 
         <table id="table-usuarios" class="display">
