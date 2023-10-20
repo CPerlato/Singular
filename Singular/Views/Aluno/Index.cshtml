@@ -1,19 +1,19 @@
-﻿@model List<UsuarioModel>
+﻿@model List<AlunoModel>
 @{
-    ViewData["Title"] = "Usuários";
+    ViewData["Title"] = "Alunos";
 }
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Usuários</title>
+    <title>Alunos</title>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
     <style>
         .custom-margin-right {
             margin-left: 140px; /* Ajuste o valor da margem conforme necessário */
         }
 
-        .d-grid{
+        .d-grid {
             margin-left: 265px; /* Ajuste o valor da margem conforme necessário */
         }
         /* Estilos para a tabela */
@@ -45,34 +45,40 @@
 </head>
 <body>
     <div class="container text-center custom-margin-right">
-        <h1 class="display-4">Listagem de Usuário</h1>
+        <h1 class="display-4">Listagem de Alunos</h1>
 
         <table id="table-usuarios" class="display">
             <thead>
                 <tr>
-                    <th scope="col">RA</th>
+                    <th scope="col">Id</th>
                     <th scope="col">Nome</th>
-                    <th scope="col">Login</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Perfil</th>
+                    <th scope="col">CPF</th>
+                    <th scope="col">Celular</th>
+@*                     <th scope="col">DataNascimento</th>
+                    <th scope="col">Endereco</th>
+                    <th scope="col">NomeDoResponsavel</th>
+                    <th scope="col">TelefoneDoResponsavel</th> *@
                     <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
                 @if (Model != null && Model.Any())
                 {
-                    foreach (var usuario in Model)
+                    foreach (AlunoModel aluno in Model)
                     {
                         <tr>
-                            <th scope="row">@usuario.Id</th>
-                            <td>@usuario.Nome</td>
-                            <td>@usuario.Login</td>
-                            <td>@usuario.Email</td>
-                            <td>@(usuario.Perfil == Singular.Enums.PerfilEnum.Admin ? "Administrador" : "Professor")</td>
+                            <th scope="row">@aluno.Id</th>
+                            <td>@aluno.Nome</td>
+                            <td>@aluno.CPF</td>
+                            <td>@aluno.Celular</td>
+@*                             <td>@aluno.DataNascimento</td>
+                             <td>@aluno.Endereco</td>
+                            <td>@aluno.NomeDoResponsavel</td>
+                            <td>@aluno.TelefoneDoResponsavel</td>  *@
                             <td>
                                 <div class="btn-group" role="group">
-                                    <a role="button" asp-action="Editar" asp-controller="Usuario" asp-route-id="@usuario.Id" class="btn btn-primary">Editar</a>
-                                    <a role="button" asp-action="ApagarConfirmacao" asp-controller="Usuario" asp-route-id="@usuario.Id" class="btn btn-primary">Apagar</a>
+                                    <a role="button" asp-action="Editar" asp-controller="Aluno" asp-route-id="@aluno.Id" class="btn btn-primary">Editar</a>
+                                    <a role="button" asp-action="ApagarConfirmacao" asp-controller="Aluno" asp-route-id="@aluno.Id" class="btn btn-primary">Apagar</a>
                                 </div>
                             </td>
                         </tr>
@@ -88,8 +94,8 @@
         </table>
     </div>
     <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-        <a class="btn btn-primary" asp-controller="Usuario" asp-action="Criar" role="button">Adicionar novo usuário</a>
-        <a class="btn btn-secondary" asp-action="Index" asp-controller="Home" role="button">Voltar</a>
+        <a class="btn btn-primary" asp-controller="Aluno" asp-action="Criar" role="button">Adicionar novo Aluno</a>
+        <a class="btn btn-secondary" asp-controller="Home" asp-action="Index" role="button">Voltar</a>
     </div>
 </body>
 </html>
