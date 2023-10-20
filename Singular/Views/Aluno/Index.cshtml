@@ -9,6 +9,64 @@
     <title>Alunos</title>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
     <style>
+
+        .logo {
+            width: auto;
+            height: 50px;
+            background: 0;
+        }
+
+        /* Ajuste a posição vertical do campo de entrada */
+        .form-group {
+            top: 30px; /* Ajuste este valor para controlar a altura da subida */
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .aviso {
+            width: 300px;
+            height: 150px;
+            background-color: #CCEEEE;
+            padding: 10px;
+            top: 20px;
+            left: 998px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .perfil {
+            text-align: left;
+            background: #EEE5E1;
+            width: 208px; /* ajuste conforme necessário */
+            height: auto;
+            border-radius: 5px;
+            display: grid;
+        }
+
+        #buscar {
+            width: 343px;
+            height: 51px;
+            top: 30px;
+            right: 1px;
+            align-content: center;
+            cursor: pointer;
+        }
+
+        h1 {
+            font-family: Zen Kaku Gothic Antique;
+            font-size: 31px;
+            font-weight: 700;
+            line-height: 38px;
+            letter-spacing: -0.5px;
+            text-align: left;
+            width: 380px;
+            height: 37px;
+            top: 20px; /* Aumente ou diminua o valor para ajustar a posição vertical */
+            left: 291px;
+            padding: 5px;
+        }
         .custom-margin-right {
             margin-left: 140px; /* Ajuste o valor da margem conforme necessário */
         }
@@ -43,9 +101,40 @@
         }
     </style>
 </head>
-<body>
+<body class="home-page">
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="input-group mb-3" id="buscar">
+                        <h1>PROCURE</h1>
+                        <input type="text" class="form-control" placeholder="Procure sua turma" aria-label="Campo de busca" aria-describedby="icone-lupa">
+                        <span class="input-group-text" id="icone-lupa">
+                            <ion-icon name="search-outline"></ion-icon>
+                        </span>
+                    </div>
+                </div>
+                <div class="aviso">
+                    <strong>AVISO</strong>
+                    <img src="~/alert.png" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <script>
+        $(document).ready(function () {
+            // Inicialize o DataTable
+            $('#table-usuarios').DataTable();
+
+            // Adicione a funcionalidade de filtro
+            $('#buscar input').on('keyup', function () {
+                $('#table-usuarios').DataTable().search($(this).val()).draw();
+            });
+        });
+    </script>
     <div class="container text-center custom-margin-right">
-        <h1 class="display-4">Listagem de Alunos</h1>
+        @* <h1 class="display-4">Listagem de Alunos</h1> *@
 
         <table id="table-usuarios" class="display">
             <thead>
