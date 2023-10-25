@@ -21,31 +21,30 @@
             background: 0;
         }
 
-        .aviso {
-            width: 375px;
-            height: 200px;
-            background-color: #CCEEEE;
-            padding: 10px;
-            top: 30px;
-            left: 998px;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .form-control {
-            width: 40%;
-            padding: 10px;
-            cursor: pointer;
+        /* Ajuste a posição vertical do campo de entrada */
+        .form-group {
+            top: 30px; /* Ajuste este valor para controlar a altura da subida */
         }
 
         a {
             text-decoration: none;
         }
 
+        .aviso {
+            width: 300px;
+            height: 150px;
+            background-color: #CCEEEE;
+            padding: 10px;
+            top: 20px;
+            left: 998px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
         .perfil {
             text-align: left;
             background: #EEE5E1;
-            width: 208px; /* adjust later */
+            width: 208px; /* ajuste conforme necessário */
             height: auto;
             border-radius: 5px;
             display: grid;
@@ -54,7 +53,7 @@
         #buscar {
             width: 343px;
             height: 51px;
-            top: 147px;
+            top: 30px;
             right: 1px;
             align-content: center;
             cursor: pointer;
@@ -69,7 +68,7 @@
             text-align: left;
             width: 380px;
             height: 37px;
-            top: 76px;
+            top: 20px; /* Aumente ou diminua o valor para ajustar a posição vertical */
             left: 291px;
             padding: 5px;
         }
@@ -114,36 +113,35 @@
         }
     </style>
 </head>
-<body>
+
+<body class="home-page">
+    
 
 
     @* <span> Migalha de pão</span> *@
 
-    <div class="content">
-
-        <div class="container">
-            <h1>PROCURE</h1>
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="input-group mb-3" id="buscar">
-                        <input type="text" class="form-control" placeholder="Procure sua turma" aria-label="Campo de busca" aria-describedby="icone-lupa">
-                        <span class="input-group-text" id="icone-lupa">
-                            <ion-icon name="search-outline"></ion-icon>
-                        </span>
+        <div class="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="input-group mb-3" id="buscar">
+                            <h1>PROCURE</h1>
+                            <input type="text" class="form-control" placeholder="Procure sua turma" aria-label="Campo de busca" aria-describedby="icone-lupa">
+                            <span class="input-group-text" id="icone-lupa">
+                                <ion-icon name="search-outline"></ion-icon>
+                            </span>
+                        </div>
                     </div>
-                </div>
-
-                <div class="aviso">
-                    <strong>AVISO</strong>
-                    <img src="~/alert.png" />
+                    <div class="aviso">
+                        <strong>AVISO</strong>
+                        <img src="~/alert.png" />
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
+        <hr>
     @*     <div> Tabela de pesquisa </div>
     <div> Footer </div> *@
-    <hr />
     <div>
     <div class="table-container">
         <table>
