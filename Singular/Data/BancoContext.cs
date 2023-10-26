@@ -9,6 +9,7 @@ namespace Singular.Data
         {
         }
         public DbSet<UsuarioModel> Usuarios { get; set; }
+        public DbSet<AlunoModel> Alunos { get; set; }
 
     }
 }
