@@ -30,8 +30,8 @@
 
 
         .form {
-            background-color: #F8BA90;
-            border: 5px solid #F8BA90;
+            background-color: #fbfbff;
+            border: 5px solid #fbfbff;
             border-radius: 5px;
             align-content: center;
             left: 359px;
@@ -39,17 +39,44 @@
             top: 414px;
         }
 
+        
+        .upload-button {
+            display: block;
+            width: 241px;
+            height: 241px;
+            border-radius: 50%;
+            background-color: #7D9CAB;
+            color: #fff;
+            cursor: pointer;
+            z-index:2;           
+        }
+
+            #img-icon {
+            display: block;                
+            width: 63px;
+            height: 63px;          
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 50%;
+            z-index:1;
+         
+        }
+                
+        /* Esconde o input de arquivo padrão */
+        #upload {
+            display: none;
+        }
+        
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Sua Conta</h1>
         <hr />
-        <img src="~/Ellipse 8.png" />        
+        <input type="file" id="upload" class="hidden" accept="image/*">
+        <label for="upload" class="upload-button"><img id="img-icon" src="~/Rectangle 36@2x.png" alt=""></label>
         <form class="form">
-            <div class="mb-3">
-                <label for="foto" class="form-label"></label>
-                <input type="file" class="form-control" id="foto" name="foto">
+            <div class="mb-3">       
                 <hr />
                 <div class="mb-3">
                     <label for="nome" class="form-label">Nome da Pessoa</label>
