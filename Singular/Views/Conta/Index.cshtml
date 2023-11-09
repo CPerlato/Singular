@@ -41,7 +41,9 @@
 
         
         .upload-button {
-            display: block;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             width: 241px;
             height: 241px;
             border-radius: 50%;
@@ -57,7 +59,7 @@
             height: 63px;          
             margin-left: auto;
             margin-right: auto;
-            margin-top: 50%;
+            margin-top: 0%;
             z-index:1;
          
         }
@@ -76,8 +78,7 @@
         <input type="file" id="upload" class="hidden" accept="image/*">
         <label for="upload" class="upload-button"><img id="img-icon" src="~/Rectangle 36@2x.png" alt=""></label>
         <form class="form">
-            <div class="mb-3">       
-                <hr />
+            <div class="mb-3">                      
                 <div class="mb-3">
                     <label for="nome" class="form-label">Nome da Pessoa</label>
                     <input type="text" class="form-control" id="nome" name="nome" required>
