@@ -13,39 +13,12 @@
             font-family: Zen Kaku Gothic Antique;
         }
 
-        h1 {          
-            text-align: center;
-            color: #63605E;
-            
-                              
-        }
-
         .logo {
             width: auto;
             height: 50px;
             background: 0;
-        }
-
-        /* Ajuste a posição vertical do campo de entrada */
-        .form-group {
-            top: 30px; /* Ajuste este valor para controlar a altura da subida */
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        .aviso {
-            width: 300px;
-            height: 150px;
-            background-color: #7D9CAB;
-            padding: 10px;
-            top: 20px;
-            left: 998px;
-            border-radius: 20px;
-            text-align: center;
-        }
-             
+        }        
+       
         #buscar {
             width: 343px;
             height: 51px;
@@ -53,6 +26,9 @@
             right: 1px;
             align-content: center;
             cursor: pointer;
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
         }
 
         h1 {
@@ -67,28 +43,28 @@
             top: 20px; /* Aumente ou diminua o valor para ajustar a posição vertical */
             left: 291px;
             padding: 5px;
+            color: #63605E;
         }
 
         .table-container {
             text-align: center;
+            margin-top: 80px;
+            text-align: end;
         }
 
         table {
-            margin: 0 auto;
+            margin: 60px;
             display: inline-block;
             text-align: left;
-        }
-
-        .table, th, td {
-            border: 1px solid #000;
-            padding: 10px;
-            text-align: left;
+            height: 100px;
         }
 
         .table, th, td {
             border: 1px solid #7D9CAB;
             padding: 10px;
             text-align: left;
+            height: 40px;
+            width: 20%;
         }
 
         .table, th {
@@ -96,18 +72,9 @@
             color: #fff;
             text-align: center;
             text-decoration: none;
+            width: 30%;
         }
 
-        h3 {
-            width: 153%;
-            height: 30px;
-            top: 265px;
-            left: 200px;
-            float: right;
-            color: #63605E;
-            text-align: center;
-            align-items: center;
-        }
 
         .form-select {
             width: 80%;
@@ -125,18 +92,27 @@
             color: #63605E;
             top: 247px;
             left: 260px;
+            margin-left: 30px;
         }
 
-        .larg {
-            width: 60%;
-        }
 
+
+        .let {
+            font-family: Zen Kaku Gothic Antique;
+            text-align: left;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            margin-top: 50px;
+        }
     </style>
 
 </head>
+<div class="let">
+    <h1>CLASSIFICAÇÃO GERAL</h1>
+</div>
 
-<h1>CLASSIFICAÇÃO GERAL</h1>
-<hr />
 <body class="home-page">
     <div class="content">
         <div class="container">
@@ -144,16 +120,15 @@
                 <div class="col-md-8">
                     <div class="input-group mb-3" id="buscar">
                         <h1>PROCURE</h1>
-                        <input type="text" class="form-control" placeholder="Procure sua turma" aria-label="Campo de busca" aria-describedby="icone-lupa">
+                        <input type="text" class="form-control" placeholder="Procure seu nome" aria-label="Campo de busca" aria-describedby="icone-lupa">
                         <span class="input-group-text" id="icone-lupa">
                             <ion-icon name="search-outline"></ion-icon>
                         </span>
                     </div>
-                </div>                
+                </div>
             </div>
         </div>
     </div>
-    <hr>  
     <div class="table-container">
         <table>
             <tr>
@@ -166,14 +141,14 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td></td>               
+                <td></td>
             </tr>
             <tr>
                 <td></td>
                 <td></td>
                 <td></td>
-                <td></td>               
-            </tr>           
+                <td></td>
+            </tr>
         </table>
     </div>
 
