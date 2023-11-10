@@ -1,5 +1,93 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model List<ProfessorModel>
 @{
+    ViewData["Title"] = "Professores";
 }
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Professores</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    <style>
+        .custom-margin-right {
+            margin-left: 140px; /* Ajuste o valor da margem conforme necessário */
+        }
+
+        .d-grid {
+            margin-left: 265px; /* Ajuste o valor da margem conforme necessário */
+        }
+        /* Estilos para a tabela */
+        #table-usuarios {
+            width: 80%; /* Aumenta a largura da tabela */
+            margin: 20px auto;
+            border-collapse: collapse; /* Colapsa as bordas da tabela */
+        }
+
+        /* Estilos para a mensagem de "Nenhum Usuário Encontrado" */
+        .no-users {
+            text-align: center;
+        }
+
+        /* Estilos para as células da tabela (exceto células dos botões) */
+        #table-usuarios td, #table-usuarios th {
+            text-align: center; /* Centraliza o conteúdo das células */
+            font-size: 16px; /* Aumenta o tamanho da fonte */
+            padding: 10px; /* Adiciona espaço interno para as células */
+            border: 1px solid #ddd; /* Adiciona uma borda fina às células */
+        }
+
+        /* Estilos para as linhas ímpares */
+        #table-usuarios tr:nth-child(odd) {
+            background-color: #CEEAF7;
+            /* Cor de fundo para linhas ímpares */
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center custom-margin-right">
+        <h1 class="display-4">Listagem de Professores Cadastrados</h1>
+
+        <table id="table-usuarios" class="display">
+            <thead>
+                <tr>
+                    <th scope="col">RA</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Login</th>
+                    <th scope="col">Email</th>
+                    <th scope="col"> </th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Any())
+                {
+                    foreach (var professor in Model)
+                    {
+                        <tr>
+                            <th scope="row">@professor.Id</th>
+                            <td>@professor.Nome</td>
+                            <td>@professor.CPF</td>
+                            <td>@professor.Materia</td>
+                            <td>
+                                <div class="btn-group" role="group">
+                                    <a role="button" asp-action="Editar" asp-controller="Professor" asp-route-id="@professor.Id" class="btn btn-primary">Editar</a>
+                                    <a role="button" asp-action="ApagarConfirmacao" asp-controller="Professor" asp-route-id="@professor.Id" class="btn btn-primary">Apagar</a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr class="odd">
+                        <td class="no-users" colspan="7">Nenhum Professor Encontrado</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <a class="btn btn-primary" asp-action="Criar" asp-controller="Professor" role="button">Adicionar novo aluno</a>
+        <a class="btn btn-secondary" asp-action="Index" asp-controller="Home" role="button">Voltar</a>
+    </div>
+</body>
+</html>
