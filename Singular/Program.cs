@@ -14,9 +14,10 @@ builder.Services.AddDbContext<BancoContext>
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 builder.Services.AddScoped<IAlunoRepositorio, AlunoRepositorio>();
-builder.Services.AddScoped<IUsuarioRepositorio, usuarioRepositorio>();
-builder.Services.AddScoped<ISessao, Sessao>();
 builder.Services.AddScoped<IEmail, Email>();
+builder.Services.AddScoped<IProfessorRepositorio, ProfessorRepositorio>();
+builder.Services.AddScoped<ISessao, Sessao>();
+builder.Services.AddScoped<IUsuarioRepositorio, usuarioRepositorio>();
 
 builder.Services.AddSession(o =>
 {
