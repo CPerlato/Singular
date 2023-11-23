@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Singular.Data;
 
@@ -10,9 +11,11 @@ using Singular.Data;
 namespace Singular.Migrations
 {
     [DbContext(typeof(BancoContext))]
-    partial class BancoContextModelSnapshot : ModelSnapshot
+    [Migration("20231123120443_NotasCreateNow")]
+    partial class NotasCreateNow
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -67,11 +70,21 @@ namespace Singular.Migrations
                     b.ToTable("Alunos");
                 });
 
-            modelBuilder.Entity("Singular.Models.MediaModel", b =>
+            modelBuilder.Entity("Singular.Models.NotasViewModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    b.Property<int>("AlunoId")
+                        .HasColumnType("int");
+
+                    b.Property<double>("Media")
+                        .HasColumnType("double");
+
+                    b.Property<string>("NomeAluno")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<double>("Nota1")
                         .HasColumnType("double");
@@ -79,12 +92,9 @@ namespace Singular.Migrations
                     b.Property<double>("Nota2")
                         .HasColumnType("double");
 
-                    b.Property<double>("Nota3")
-                        .HasColumnType("double");
-
                     b.HasKey("Id");
 
-                    b.ToTable("Medias");
+                    b.ToTable("Notas");
                 });
 
             modelBuilder.Entity("Singular.Models.ProfessorModel", b =>

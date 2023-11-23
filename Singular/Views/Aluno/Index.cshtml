@@ -45,7 +45,7 @@
 </head>
 <body>
     <div class="container text-center custom-margin-right">
-        <h1 class="display-4">Listagem de Alunos Cadastrados</h1>
+        <h1 class="display-4"> Alunos</h1>
 
         <table id="table-usuarios" class="display">
             <thead>
@@ -54,6 +54,7 @@
                     <th scope="col">Nome</th>
                     <th scope="col">Login</th>
                     <th scope="col">Email</th>
+                    <th scope="col"> </th>
                     <th scope="col"> </th>
                 </tr>
             </thead>
@@ -73,6 +74,12 @@
                                     <a role="button" asp-action="ApagarConfirmacao" asp-controller="Aluno" asp-route-id="@aluno.Id" class="btn btn-primary">Apagar</a>
                                 </div>
                             </td>
+                            <td>
+                                <div class="btn-group" role="group">
+                                    <a role="button" asp-action="CalcularMedia" asp-controller="Media" class="btn btn-primary">Notas</a>
+                                </div>
+                            </td>
+
                         </tr>
                     }
                 }

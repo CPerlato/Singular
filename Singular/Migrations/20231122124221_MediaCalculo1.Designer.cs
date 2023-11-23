@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Singular.Data;
 
@@ -10,9 +11,11 @@ using Singular.Data;
 namespace Singular.Migrations
 {
     [DbContext(typeof(BancoContext))]
-    partial class BancoContextModelSnapshot : ModelSnapshot
+    [Migration("20231122124221_MediaCalculo1")]
+    partial class MediaCalculo1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,12 +51,6 @@ namespace Singular.Migrations
                     b.Property<string>("NomeDoResponsavel")
                         .IsRequired()
                         .HasColumnType("longtext");
-
-                    b.Property<double>("Nota1")
-                        .HasColumnType("double");
-
-                    b.Property<double>("Nota2")
-                        .HasColumnType("double");
 
                     b.Property<string>("Ra")
                         .HasColumnType("longtext");

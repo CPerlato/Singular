@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Singular.Data;
 using Singular.Models;
 using Singular.Repositorio;
 
@@ -11,6 +12,7 @@ namespace Singular.Controllers
         {
             _alunoRepositorio = alunoRepositorio;
         }
+
         public IActionResult Index()
         {
             List<AlunoModel> alunos = _alunoRepositorio.BuscarTodos();

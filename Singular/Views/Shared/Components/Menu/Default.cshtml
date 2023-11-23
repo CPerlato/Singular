@@ -36,7 +36,6 @@
         transition: left 0.3s; /* Transição suave na propriedade 'left' */
         z-index: 1; /* Coloca a barra na parte superior da pilha de camadas */
         gap: 32px;
-        border-top-right-radius: 32px; /* Adiciona bordas arredondadas de 25px */
     }
 
         /* Quando a classe 'active' é aplicada, torna a barra visível */
@@ -58,8 +57,8 @@
         text-align: left;
         background: #EEE5E1;
         width: 208px;
-        border-radius: 5px;
-        display: grid;
+/*         border-radius: 5px;
+ */        display: grid;
     }
 
         /* Remove os estilos padrão da lista de itens */
@@ -121,7 +120,6 @@
         }
 </style>
 
-<div class="toggle-btn" onclick="toggleNavBar()">☰</div>
 <div class="nav-bar" id="navbar">   
     <div class="">
         <div class="logomenu">
@@ -139,14 +137,13 @@
             {
                 <li><a asp-controller="Usuario" asp-action="Index">Usuários</a></li>
             }
-            <li><a href="#">Perfil</a></li>         
-            <li><a asp-controller="Home" asp-action="IndexA">Tela Home Aluno</a></li>
-            <li><a asp-controller="Aluno" asp-action="Index">Tela Cadastro Aluno</a></li>
-            <li><a asp-controller="Professor" asp-action="Index">Tela Cadastro Professor</a></li>
-            <li><a asp-controller="Ranking" asp-action="Index">Ranking</a></li>
-            <li><a asp-controller="Conta" asp-action="Index">Conta</a></li>
+@*             <li><a asp-controller="Home" asp-action="IndexA">Tela Home Aluno</a></li>
+ *@            <li><a asp-controller="Aluno" asp-action="Index">Alunos</a></li>
+@*             <li><a asp-controller="Professor" asp-action="Index">Tela Cadastro Professor</a></li>
+ *@@*             <li><a asp-controller="Ranking" asp-action="Index">Ranking</a></li>
+ *@            <li><a asp-controller="Conta" asp-action="Index">Perfil</a></li>
             <li><a asp-controller="Sobre" asp-action="Index">Versão</a></li>
-            <li><a href="#"></a></li>
+
             <li><a asp-controller="Login" asp-action="Sair">Sair</a></li>
         </ul>
     </nav>

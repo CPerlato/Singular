@@ -11,6 +11,7 @@ namespace Singular.Data
         public DbSet<UsuarioModel> Usuarios { get; set; }
         public DbSet<AlunoModel> Alunos { get; set; }
         public DbSet<ProfessorModel> Professores { get; set; }
+        public DbSet<MediaModel> Medias { get; set; }
 
 
     }

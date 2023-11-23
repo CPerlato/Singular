@@ -28,5 +28,6 @@ namespace Singular.Models
 
         [Required(ErrorMessage = "Digite o telefone do responsável do aluno")]
         public string TelefoneDoResponsavel { get; set; }
+
     }
 }

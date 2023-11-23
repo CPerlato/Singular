@@ -1,4 +1,4 @@
-﻿@model Views_Home_Index
+﻿@model List<AlunoModel>
 @{
     ViewData["Title"] = "Home";
 }
@@ -177,13 +177,26 @@
                     <th>T</th>
                     <th>Media</th>
                 </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                <tbody>
+                    @if (Model != null && Model.Any())
+                    {
+                        foreach (var aluno in Model)
+                        {
+                            <tr>
+                                <th scope="row">@aluno.Id</th>
+                                <td>@aluno.Nome</td>
+                                <td>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr class="odd">
+                            <td class="no-users" colspan="7">Nenhum Aluno Encontrado</td>
+                        </tr>
+                    }
+                </tbody>
                 <tr>
                     <td></td>
                     <td></td>
